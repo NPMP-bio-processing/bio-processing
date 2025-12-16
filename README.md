@@ -7,7 +7,7 @@ Osnovna implementacija klasičnih atraktorjev in gensko regulatornih omrežij.
 ```
 lorenz/
 ├── README.md                  # Dokumentacija
-├── requirements.txt           # Python odvisnosti
+├── requirements.txt    
 ├── lorenz_attractor.py        # Lorenzov atraktor
 ├── repressilator.py           # Represilator
 └── run_all_analyses.py        # Glavna skripta
