@@ -57,8 +57,8 @@ class Repressilator:
 if __name__ == "__main__":
     print("Represilator - simulacija")
     
-    rep = Repressilator(alpha=20.0, n=2.0)
-    t, solution = rep.solve(t_end=150)
+    rep = Repressilator(alpha=20.0, n=3.0)
+    t, solution = rep.solve(initial_state=[1, 2, 3], t_end=150)
     
     print(f"Simulirano {len(t)} točk")
     rep.plot_time_series(t, solution)
