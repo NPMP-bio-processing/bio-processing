@@ -1,6 +1,6 @@
 from lorenz_attractor import LorenzAttractor
 from repressilator import Repressilator
-
+from lorenz96_model import Lorenz96
 
 print("=" * 70)
 print("MODELIRANJE ATRAKTORJEV Z NDE")
@@ -30,3 +30,14 @@ print(f"Simulacija: {len(t)} točk, čas 0-150")
 print(f"Gen A: [{solution[:,0].min():.2f}, {solution[:,0].max():.2f}]")
 print(f"Gen B: [{solution[:,1].min():.2f}, {solution[:,1].max():.2f}]")
 print(f"Gen C: [{solution[:,2].min():.2f}, {solution[:,2].max():.2f}]")
+
+# 3. LORENZ96 MODEL
+lorenz96 = Lorenz96(N=5, F=8, T=30.0, dt=0.01)
+lorenz96.solve()
+
+print("\n[3] LORENZ-96 MODEL")
+print("-" * 70)
+print("Vizualizacija...")
+
+lorenz96.plot_3d()
+lorenz96.plot_time_series()
