@@ -27,12 +27,17 @@ class BrusselatorAttractor:
             y0 *= 1 + random.random()*2
             model = te.loada(f'''
             model brusselator
-                x' = {self.a} + x * x * y - {self.b} * x - x
-                y' = {self.b} * x - x * x * y
                 
-                x = {x0}; y = {y0}
+                $A -> X;         A
+                2 X + Y -> 3 X; X*X*Y
+                $B + X -> Y + D; B*X
+                X -> ;         X
+
+                A = {self.a*5}; B = {self.b*5};
+                X = {x0}; Y = {y0}; 
             end
         ''')
+            print(te.getODEsFromModel(model))
             result = model.simulate(0, t_end, n_points)
             t = result[:, 0]
             solution = result[:, 1:]
@@ -71,8 +76,8 @@ class BrusselatorAttractor:
 if __name__ == "__main__":
     print("Brusselator atraktor - simulacija")
     
-    brusselator = BrusselatorAttractor(a=1, b=3, runs=50)
-    ts, solutions = brusselator.solve(t_end=60)
+    brusselator = BrusselatorAttractor(a=1, b=3, runs=10)
+    ts, solutions = brusselator.solve(t_end=120)
     
     print(f"Simulirano {len(ts)} točk")
     brusselator.plot_3d(solutions)

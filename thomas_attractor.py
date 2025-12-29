@@ -22,13 +22,18 @@ class ThomasAttractor:
             model thomas
                 b = {self.b}
 
-                x' = sin(y) - b * x
-                y' = sin(z) - b * y
-                z' = sin(x) - b * z
+                x' = sin((y-cy)) - b * (x-cx)
+                y' = sin((z-cz)) - b * (y-cy)
+                z' = sin((x-cx)) - b * (z-cz)
 
-                x = {x0}
-                y = {y0}
-                z = {z0}
+                cx = 2
+                cy = 2
+                cz = 2
+
+                x = {x0} + cx
+                y = {y0} + cy
+                z = {z0} + cz
+
             end
         ''')
         result = model.simulate(0, t_end, n_points)
