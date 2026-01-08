@@ -1,3 +1,5 @@
+Github link: https://github.com/NPMP-bio-processing/bio-processing.git
+
 # Modeliranje atraktorjev z NDE v računski biologiji
 
 Osnovna implementacija klasičnih atraktorjev in gensko regulatornih omrežij.
@@ -73,3 +75,4 @@ lorenz.plot_3d(solution)
 
 ---
 *December 2025*
+
